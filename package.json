@@ -4,6 +4,7 @@
   "description": "Douban client for reat ui with douban-book-client.",
   "main": "server.js",
   "scripts": {
+    "start": "watchify -o public/js/bundle.js -v -d .",
     "test": "npm test"
   },
   "repository": {
@@ -24,12 +25,25 @@
   "homepage": "https://github.com/WhatAKitty/react-douban-book#readme",
   "dependencies": {
     "douban-book-client": "^0.2.0",
+    "guide-menu": "^0.2.0",
     "express": "^4.13.3",
     "jade": "^1.11.0",
-    "react": "^0.14.5"
+    "react": "^0.14.5",
+    "react-dom": "^0.14.5",
+    "browserify": "~6.2.0",
+    "envify": "~3.0.0",
+    "reactify": "^1.1.1",
+    "watchify": "~2.1.0",
+    "browserify-middleware": "^7.0.0"
   },
   "devDependencies": {
     "mocha": "*",
-    "should": "*"
+    "should": "*" 
+  },
+  "browserify": {
+    "transform": [
+      "reactify",
+      "envify"
+    ]
   }
 }

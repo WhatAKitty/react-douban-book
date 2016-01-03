@@ -2,6 +2,9 @@
 var express = require('express'),
 	http = require('http'),
 	routes = require('./routes');
+	
+var browserify = require("browserify-middleware");
+browserify.settings('transform', ['reactify']);
 
 // Create an express instance and set a port variable
 var app = express();
@@ -12,6 +15,9 @@ app.set('view engine', 'jade');
 
 // Disable etag headers on responses
 app.disable('etag');
+
+// browserify
+app.use("/js", browserify("./components"));
 
 // Index Route
 app.get('/', routes);

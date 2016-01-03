@@ -2,4 +2,14 @@ extends layout
 
 block content
 	h1.
-		你好吗？中国
+		豆瓣客户端
+	#guideMenu
+	script#initial-state(type="application/json").
+		[
+			{"key": "home", "name": "首页", "href": "/", "active": true},
+			{"key": "bookRepo", "name": "书库列表", "href": "/bookRepo"},
+			{"key": "myInfo", "name": "我的信息", "href": "/my/info"},
+			{"key": "mySecurity", "name": "我的安全", "href": "/my/security"},
+			{"key": "mybookRepo", "name": "我的书库", "href": "/my/bookRepo"}
+		]
+	script(src="/js/GuideMenuRef.js")

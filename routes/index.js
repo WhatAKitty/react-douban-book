@@ -6,6 +6,7 @@ var constant = require("../constant");
 
 /* GET home page. */
 router.get('/', function (req, res) {
+    
     res.render('index', { 
         title: constant().title,
         curPath: req.url
