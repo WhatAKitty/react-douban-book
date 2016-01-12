@@ -7,8 +7,8 @@ var constant = require("../constant");
 /* GET home page. */
 router.get('/', function (req, res) {
     
-    res.render('index', { 
-        title: constant().title,
+    res.render('index', {
+        title: "豆瓣客户端",
         curPath: req.url
     });
 });

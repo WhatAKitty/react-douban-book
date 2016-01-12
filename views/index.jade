@@ -1,8 +1,21 @@
 extends layout
 
+block headimport
+	link(href="/css/reset.css", rel="stylesheet")
+	link(href="/css/site.css", rel="stylesheet")
+	link(href="/css/container.css", rel="stylesheet")
+	link(href="/css/grid.css", rel="stylesheet")
+
 block content
-	h1.
-		豆瓣客户端
+	.ui.four.column.grid.container
+		.column.
+			1234
+		.column.
+			2345
+		.column.
+			3456
+		.column.
+			4567
 	#guideMenu
 	script#initial-state(type="application/json").
 		[
@@ -12,4 +25,5 @@ block content
 			{"key": "mySecurity", "name": "我的安全", "href": "/my/security"},
 			{"key": "mybookRepo", "name": "我的书库", "href": "/my/bookRepo"}
 		]
+	script(src="/js/vendor.js")
 	script(src="/js/GuideMenuRef.js")
